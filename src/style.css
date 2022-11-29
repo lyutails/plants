@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Inika";
+  src: url("../refs/fonts/Inika/Inika-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inika Bold";
+  src: url("../refs/fonts/Inika/Inika-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../refs/fonts/Inter/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter Bold";
+  src: url("../refs/fonts/Inter/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+.wrapper {
+  width: 1222px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.header {
+  height: 117px;
+  background-color: #EDF2EC;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.logo {
+  width: 67px;
+  height: 20px;
+  font-family: "Inika";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.logo_icon {
+  width: 20px;
+  height: 20px;
+  background-image: url("../refs/icons/logo_vector.svg");
+}
+
+.nav {
+  width: 443px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.nav_item {
+  text-decoration: none;
+  font-family: "Inika";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 50px;
+}/*# sourceMappingURL=style.css.map */
