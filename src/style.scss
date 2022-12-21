@@ -68,17 +68,17 @@ html {
 }
 
 .header {
-    width: 100%;    
-    background-color: $main_blocks_color_one;   
+    width: 100%;
+    background-color: $main_blocks_color_one;
 }
 
 .header_wrapper {
-    width: 1222px;    
-    height: 117px;     
+    width: 1222px;
+    height: 117px;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    margin: 0 auto;  
+    align-items: center;
+    margin: 0 auto;
 }
 
 .logo {
@@ -88,8 +88,8 @@ html {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 21px;      
-    color: $text_coloured_five;  
+    line-height: 21px;
+    color: $text_coloured_five;
     user-select: none;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
@@ -111,12 +111,11 @@ html {
     width: 443px;
     display: flex;
     justify-content: space-between;
-    list-style: none;
     text-decoration: none;
 }
 
 .nav_item {
-    list-style: none;    
+    list-style: none;
 
     &:hover {
         cursor: pointer;
@@ -151,11 +150,11 @@ html {
 }
 
 .welcome_wrapper {
-    width: 1222px;    
-    height: 549px;     
+    width: 1222px;
+    height: 549px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 
 .plants {
@@ -226,7 +225,7 @@ html {
 
 .about {
     width: 100%;
-    background-color: $main_blocks_color_two;    
+    background-color: $main_blocks_color_two;
 }
 
 .about_wrapper {
@@ -261,8 +260,8 @@ html {
     color: $text_coloured_two;
 }
 
-.about_info {    
-    height: 208px;    
+.about_info {
+    height: 208px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -315,10 +314,10 @@ html {
     user-select: none;
 }
 
-.service_menu {    
-    width: 559px;  
+.service_menu {
+    width: 559px;
     display: flex;
-    justify-content: space-between;     
+    justify-content: space-between;
 }
 
 .service_button {
