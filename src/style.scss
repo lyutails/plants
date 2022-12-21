@@ -142,6 +142,10 @@ html {
     &:visited {
         text-decoration: none;
     }
+
+    &.active {
+        color: $text_coloured_two;
+    }
 }
 
 .welcome {
@@ -1021,10 +1025,10 @@ html {
 
     .burger {
         width: 40px;
-        height: 27px;        
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
+        height: 27px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .burger_line {
@@ -1032,15 +1036,6 @@ html {
         width: 40px;
         height: 2px;
         background-color: $text_coloured_four;
-    }
-
-    $move: translateY(7px);
-
-    $result: translateY(0px);
-    @for $i from 1 to 4 {        
-        .burger_line:nth-child(3n + #{$i}) {
-            transform: $move;
-        }
     }
     
     .welcome_wrapper {
