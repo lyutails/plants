@@ -1061,6 +1061,12 @@ html {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .burger:hover {
+        cursor: pointer;
+        transform: rotate(90deg);
     }
 
     .burger_line {
