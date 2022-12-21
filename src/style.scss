@@ -91,20 +91,25 @@ html {
     line-height: 21px;
     color: $text_coloured_five;
     user-select: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
     text-decoration: none;
+
+    .logo_icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url('../refs/icons/logo_vector.svg');
+        transition: all 0.4 ease-in-out;
+    }
 
     &:hover {
         cursor: pointer;
         color: $hover;
     }
-}
 
-.logo_icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url('../refs/icons/logo_vector.svg');
+    &:hover > .logo_icon {
+        background-image: url('../refs/icons/logo_vector_hover.svg');
+    }
 }
 
 .nav {
@@ -146,6 +151,10 @@ html {
     &.active {
         color: $text_coloured_two;
     }
+}
+
+.burger {
+    display: none;
 }
 
 .welcome {
@@ -218,7 +227,7 @@ html {
     color: $text_coloured_five;
     text-align: center;
     user-select: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
     &:hover {
         cursor: pointer;
@@ -336,7 +345,7 @@ html {
     padding: 12px 40px 12px 40px;
     text-align: center;
     user-select: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
     &:hover {
         cursor: pointer;
@@ -363,9 +372,11 @@ html {
     align-items: center;
     border: 1px solid #E3E1D5;
     border-radius: 20px;
+    transition: all 0.4s ease-in-out;
 
     &:hover {
         cursor: pointer;
+        border: 1px solid $text_coloured_one;
     }
 }
 
@@ -517,7 +528,7 @@ html {
     color: $text_coloured_two;
     margin-bottom: 7px;
     user-select: none;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
     &:hover {
         cursor: pointer;
@@ -646,9 +657,11 @@ html {
     color: $text_coloured_five;
     user-select: none;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 
     &:hover {
         cursor: pointer;
+        color: $text_coloured_two;
     }
 }
 
@@ -663,9 +676,11 @@ html {
     color: $text_coloured_five;
     user-select: none;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 
     &:hover {
         cursor: pointer;
+        color: $text_coloured_two;
     }
 }
 
@@ -682,21 +697,38 @@ html {
     display: inline-block;
     user-select: none;
     text-decoration: none;
+    transition: all 0.4 ease-in-out;
 
     &.instagram {
         background-image: url('../refs/icons/inst\ 1.svg');
+
+        &:hover {
+            background-image: url('../refs/icons/inst_hover.svg');
+        }
     }
 
     &.facebook {
         background-image: url('../refs/icons/fb\ 1.svg');
+
+        &:hover {
+            background-image: url('../refs/icons/fb_hover.svg');
+        }
     }
 
     &.twitter {
         background-image: url('../refs/icons/tw\ 1.svg');
+
+        &:hover {
+            background-image: url('../refs/icons/tw_hover.svg');
+        }
     }
 
     &.pinterest {
         background-image: url('../refs/icons/pinterest\ 1.svg');
+
+        &:hover {
+            background-image: url('../refs/icons/pinterest_hover.svg');
+        }
     }
 
     &:hover {
