@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){for(var e=document.querySelector(".burger"),r=1;r<=4;r++){var t=document.createElement("span");t.classList.add("burger_line"),e.append(t)}}()})();
