@@ -18,10 +18,54 @@ function burgerCreate() {
         burger_menu.classList.toggle('active');
     })
 
-    const nav_item_burger = document.querySelector('.nav_item_burger');
-    const nav_item_link_burger = document.querySelector('.nav_item_link_burger');
-    nav_item_burger.addEventListener('click', () => {
-        nav_item_link_burger.classList.add('active');
+    const nav_item_burger_home = document.querySelector('.nav_item_burger_home');
+    const nav_item_link_burger_home = document.querySelector('.nav_item_link_burger_home');
+    nav_item_burger_home.addEventListener('click', () => {
+        nav_item_link_burger_home.classList.add('active');
+        nav_item_link_burger_about.classList.remove('active');
+        nav_item_link_burger_price.classList.remove('active');
+        nav_item_link_burger_service.classList.remove('active');
+        nav_item_link_burger_contacts.classList.remove('active');
+    })
+
+    const nav_item_burger_about = document.querySelector('.nav_item_burger_about');
+    const nav_item_link_burger_about = document.querySelector('.nav_item_link_burger_about');
+    nav_item_burger_about.addEventListener('click', () => {
+        nav_item_link_burger_about.classList.add('active');
+        nav_item_link_burger_home.classList.remove('active');
+        nav_item_link_burger_price.classList.remove('active');
+        nav_item_link_burger_service.classList.remove('active');
+        nav_item_link_burger_contacts.classList.remove('active');
+    })
+
+    const nav_item_burger_service = document.querySelector('.nav_item_burger_service');
+    const nav_item_link_burger_service = document.querySelector('.nav_item_link_burger_service');
+    nav_item_burger_service.addEventListener('click', () => {
+        nav_item_link_burger_service.classList.add('active');
+        nav_item_link_burger_home.classList.remove('active');
+        nav_item_link_burger_about.classList.remove('active');
+        nav_item_link_burger_price.classList.remove('active');
+        nav_item_link_burger_contacts.classList.remove('active');
+    })
+
+    const nav_item_burger_price = document.querySelector('.nav_item_burger_price');
+    const nav_item_link_burger_price = document.querySelector('.nav_item_link_burger_price');
+    nav_item_burger_price.addEventListener('click', () => {
+        nav_item_link_burger_price.classList.add('active');
+        nav_item_link_burger_home.classList.remove('active');
+        nav_item_link_burger_about.classList.remove('active');
+        nav_item_link_burger_service.classList.remove('active');
+        nav_item_link_burger_contacts.classList.remove('active');
+    })
+
+    const nav_item_burger_contacts = document.querySelector('.nav_item_burger_contacts');
+    const nav_item_link_burger_contacts = document.querySelector('.nav_item_link_burger_contacts');
+    nav_item_burger_contacts.addEventListener('click', () => {
+        nav_item_link_burger_contacts.classList.add('active');
+        nav_item_link_burger_home.classList.remove('active');
+        nav_item_link_burger_about.classList.remove('active');
+        nav_item_link_burger_service.classList.remove('active');
+        nav_item_link_burger_price.classList.remove('active');
     })
 }
 burgerCreate();

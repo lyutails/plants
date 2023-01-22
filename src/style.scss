@@ -1257,11 +1257,19 @@ html {
     }
   }
 
-  .nav_item_burger {
+  .nav_item_burger_home,
+  .nav_item_burger_about,
+  .nav_item_burger_service,
+  .nav_item_burger_price,
+  .nav_item_burger_contacts {
     list-style: none;
   }
 
-  .nav_item_link_burger {
+  .nav_item_link_burger_home,
+  .nav_item_link_burger_about,
+  .nav_item_link_burger_service,
+  .nav_item_link_burger_price,
+  .nav_item_link_burger_contacts {
     font-family: "Inika";
     font-style: normal;
     font-weight: 400;
@@ -1272,6 +1280,8 @@ html {
     user-select: none;
     text-decoration: none;
     transition: all 0.2s ease-in-out;
+    list-style: none;
+    text-decoration: none;
 
     &:hover {
       text-decoration: none;
