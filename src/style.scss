@@ -1606,3 +1606,468 @@ html {
     padding-top: 23px;
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 379.9px) {
+  .header_wrapper {
+    width: 290px;
+    height: 96px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    width: 40px;
+    height: 27px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease-in-out;
+    z-index: 1000;
+  }
+
+  .burger:hover {
+    cursor: pointer;
+
+    > {
+      .burger_line:nth-child(1) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      .burger_line:nth-child(2) {
+        transform: rotate(45deg) translate(0px, 6px);
+        background-color: $text_coloured_two;
+        transform-origin: center;
+      }
+
+      .burger_line:nth-child(3) {
+        transform: rotate(-45deg) translate(0px, -6px);
+        background-color: $text_coloured_two;
+        transform-origin: center;
+      }
+
+      .burger_line:nth-child(4) {
+        width: 0%;
+        opacity: 0;
+      }
+    }
+  }
+
+  .burger {
+    &.active {
+      position: fixed;
+      top: 35px;
+      right: 40px;
+
+      > {
+        .burger_line:nth-child(1) {
+          width: 0%;
+          opacity: 0;
+        }
+
+        .burger_line:nth-child(2) {
+          transform: rotate(45deg) translate(0px, 6px);
+          background-color: $text_coloured_one;
+          transform-origin: center;
+        }
+
+        .burger_line:nth-child(3) {
+          transform: rotate(-45deg) translate(0px, -6px);
+          background-color: $text_coloured_one;
+          transform-origin: center;
+        }
+
+        .burger_line:nth-child(4) {
+          width: 0%;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .burger_line {
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background-color: $text_coloured_four;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .overlay {
+    &.active {
+      transform: translate(0%, 0px);
+    }
+  }
+
+  .burger_menu {
+    width: 100%;
+    height: 400px;
+    background-color: rgba(237, 242, 236, 0.8);
+    position: fixed;
+    z-index: 500;
+    transform: translate(100%, 0px);
+    transition: all 0.4s ease-in-out;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 50px;
+    border-radius: 0 0 0 50px;
+
+    &.active {
+      transform: translate(0%, 0px);
+    }
+  }
+
+  .nav_item_burger_home,
+  .nav_item_burger_about,
+  .nav_item_burger_service,
+  .nav_item_burger_price,
+  .nav_item_burger_contacts {
+    list-style: none;
+  }
+
+  .nav_item_link_burger_home,
+  .nav_item_link_burger_about,
+  .nav_item_link_burger_service,
+  .nav_item_link_burger_price,
+  .nav_item_link_burger_contacts {
+    font-family: "Inika";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    user-select: none;
+    color: $text_coloured_five;
+    user-select: none;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    list-style: none;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      color: $hover;
+    }
+
+    &:visited {
+      text-decoration: none;
+    }
+
+    &.active {
+      color: $text_coloured_two;
+    }
+  }
+
+  .welcome_wrapper {
+    width: 280px;
+    height: 296px;
+  }
+
+  .plants {
+    display: none;
+  }
+
+  .welcome_content {
+    width: 280px;
+    height: 317px;
+    margin-top: 9px;
+  }
+
+  .welcome_title {
+    width: 280px;
+    height: 70px;
+    font-family: "Inter Bold";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 23px;
+  }
+
+  .welcome_info {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 23px;
+  }
+
+  .welcome_button {
+    width: 122px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .about_wrapper {
+    width: 280px;
+    height: 520px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about_content {
+    width: 280px;
+    height: 308px;
+    margin-top: 30px;
+    margin-right: 0px;
+  }
+
+  .about_title {
+    width: 280px;
+    height: 58px;
+    font-size: 25px;
+    line-height: 33px;
+    margin-bottom: 22px;
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  .about_info {
+    width: 280px;
+    height: 228px;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .about_plant {
+    display: inline-block;
+    width: 150px;
+    height: 147px;
+    margin: 0px;
+    background-image: url("../refs/380/houseplant\ 1.png");
+  }
+
+  .service_wrapper {
+    width: 280px;
+    height: 3150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .service_nav {
+    width: 252px;
+    height: 183px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .service_title {
+    width: 187px;
+    height: 69px;
+    font-size: 25px;
+    line-height: 33px;
+    margin-right: 0px;
+    margin-top: 0px;
+  }
+
+  .service_menu {
+    width: 252px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    gap: 9px;
+  }
+
+  .service_button {
+    width: 121px;
+    font-family: "Inika";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: $text_coloured_two;
+    border: 1px solid $text_coloured_two;
+    border-radius: 5px;
+    padding: 7px 0px 7px 0px;
+    text-align: center;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .service_cards {
+    position: relative;
+    width: 280px;
+    height: 2870px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 42px;
+  }
+
+  .card {
+    width: 281px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e3e1d5;
+    border-radius: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .card_image {
+    width: 280px;
+    height: 350px;
+
+    &.one {
+      background-image: url("../refs/768/first\ \(6\).png");
+    }
+
+    &.two {
+      background-image: url("../refs/768/first\ \(7\).png");
+    }
+
+    &.three {
+      background-image: url("../refs/768/first\ \(8\).png");
+    }
+
+    &.four {
+      background-image: url("../refs/768/first\ \(9\).png");
+    }
+
+    &.five {
+      background-image: url("../refs/768/first\ \(10\).png");
+    }
+
+    &.six {
+      background-image: url("../refs/768/first\ \(11\).png");
+    }
+  }
+
+  .card_info {
+    width: 213px;
+    height: 40px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $text_coloured_three;
+    user-select: none;
+  }
+
+  .prices_wrapper {
+    width: 280px;
+    height: 512px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .prices_left {
+    width: 224px;
+    height: 304px;
+    margin-right: 0px;
+    margin-top: 25px;
+  }
+
+  .prices_title {
+    width: 224px;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .prices_options {
+    width: 224px;
+    height: 235px;
+    margin-top: 42px;
+  }
+
+  .option {
+    width: 180px;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .prices_right {
+    width: 230px;
+    height: 126px;
+    margin-top: 15px;
+    align-items: center;
+  }
+
+  .prices_info {
+    height: 78px;
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .prices_button {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 42px;
+    padding: 8px 22px 8px 22px;
+  }
+
+  .prices_image {
+    width: 152px;
+    height: 175px;
+    background-image: url("../refs/768/prices_leaves.png");
+  }
+
+  .contacts_wrapper {
+    width: 280px;
+    height: 445px;
+  }
+
+  .contacts_title {
+    padding-top: 25px;
+    font-size: 25px;
+    line-height: 33px;
+  }
+
+  .pic_city {
+    width: 280px;
+    height: 302px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 84px;
+  }
+
+  .contacts_pic {
+    width: 100px;
+    height: 125px;
+    background-image: url("../refs/380/contact_woman\ 1\ \(2\).png");
+    transform: translateY(0px);
+  }
+
+  .city_choice {
+    width: 280px;
+    height: 50px;
+    margin-top: 0px;
+  }
+
+  .footer_wrapper {
+    width: 280px;
+    height: 146px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer_left {
+    padding-top: 23px;
+  }
+}
