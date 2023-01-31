@@ -402,6 +402,10 @@ html {
   }
 }
 
+.blur {
+  filter: blur(5px);
+}
+
 .card_image {
   width: 330px;
   height: 350px;
@@ -1143,6 +1147,12 @@ html {
 }
 
 @media screen and (min-width: 380px) and (max-width: 767.9px) {
+  .logo {
+    &.active {
+      color: $text_coloured_one;
+  }
+}
+
   .header_wrapper {
     width: 330px;
     height: 96px;
@@ -1255,45 +1265,37 @@ html {
     &.active {
       transform: translate(0%, 0px);
     }
-  }
 
-  .nav_item_burger_home,
-  .nav_item_burger_about,
-  .nav_item_burger_service,
-  .nav_item_burger_price,
-  .nav_item_burger_contacts {
-    list-style: none;
-  }
-
-  .nav_item_link_burger_home,
-  .nav_item_link_burger_about,
-  .nav_item_link_burger_service,
-  .nav_item_link_burger_price,
-  .nav_item_link_burger_contacts {
-    font-family: "Inika";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 50px;
-    user-select: none;
-    color: $text_coloured_five;
-    user-select: none;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    list-style: none;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-      color: $hover;
+    .nav_item_burger {
+      list-style: none;
     }
 
-    &:visited {
+    .nav_item_link_burger {
+      font-family: "Inika";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 50px;
+      user-select: none;
+      color: $text_coloured_five;
+      user-select: none;
       text-decoration: none;
-    }
+      transition: all 0.2s ease-in-out;
+      list-style: none;
+      text-decoration: none;
 
-    &.active {
-      color: $text_coloured_two;
+      &:hover {
+        text-decoration: none;
+        color: $hover;
+      }
+
+      &:visited {
+        text-decoration: none;
+      }
+
+      &.active {
+        color: $text_coloured_two;
+      }
     }
   }
 
@@ -1722,19 +1724,11 @@ html {
     }
   }
 
-  .nav_item_burger_home,
-  .nav_item_burger_about,
-  .nav_item_burger_service,
-  .nav_item_burger_price,
-  .nav_item_burger_contacts {
+  .nav_item_burger_home {
     list-style: none;
   }
 
-  .nav_item_link_burger_home,
-  .nav_item_link_burger_about,
-  .nav_item_link_burger_service,
-  .nav_item_link_burger_price,
-  .nav_item_link_burger_contacts {
+  .nav_item_link_burger_home {
     font-family: "Inika";
     font-style: normal;
     font-weight: 400;
