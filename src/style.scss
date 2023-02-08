@@ -42,6 +42,7 @@ $text_coloured_five: #010201;
 $info_blocks: #d6e7d2;
 $hover: #e06733;
 $gradient: linear-gradient(#d6e7d2, #499a18);
+$accordeon: #d6e7d2;
 
 html {
   scroll-behavior: smooth;
@@ -109,7 +110,7 @@ html {
     width: 20px;
     height: 20px;
     background-image: url("../refs/icons/logo_vector.svg");
-    transition: all 0.4 ease-in-out;
+    transition: background-image 0.4s ease-in-out;
   }
 
   &:hover {
@@ -119,6 +120,15 @@ html {
 
   &:hover > .logo_icon {
     background-image: url("../refs/icons/logo_vector_hover.svg");
+  }
+
+  &.active {
+    color: $text_coloured_one;
+
+    &:hover {
+      cursor: pointer;
+      color: $hover;
+    }
   }
 }
 
@@ -369,10 +379,40 @@ html {
   user-select: none;
   transition: all 0.4s ease-in-out;
 
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    opacity: 0.8;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-color: rgba(0, 0, 0, 0.1);
+      color: white;
+      opacity: 0.8;
+      cursor: auto;
+    }
+  }
+
   &:hover {
     cursor: pointer;
     background-color: $hover;
+    border-color: $hover;
     color: $main_blocks_color_two;
+  }
+
+  &.active {
+    background-color: $text_coloured_one;
+    border-color: $text_coloured_one;
+    color: $main_blocks_color_two;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $hover;
+      border-color: $hover;
+      color: $main_blocks_color_two;
+    }
   }
 }
 
@@ -502,8 +542,6 @@ html {
 }
 
 .option {
-  width: 250px;
-  height: 50px;
   list-style: none;
   user-select: none;
   background-color: #edf2ec;
@@ -514,9 +552,24 @@ html {
   font-size: 20px;
   line-height: 50px;
   color: $text_coloured_five;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &.opened {
+    height: 154px;
+    background-color: $accordeon;
+  }
+}
+
+.option_title {
   padding-left: 40px;
   padding-right: 40px;
+  width: 250px;
+  height: 50px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -535,11 +588,6 @@ html {
   &:hover {
     cursor: pointer;
     background-color: #aea1a1;
-
-    .arrow_dropdown {
-      background-color: #ffffff;
-      transform: rotate(180deg);
-    }
   }
 
   .arrow_dropdown {
@@ -550,11 +598,86 @@ html {
 
     &.left {
       transform: rotate(45deg) translate(1px, 0px);
+
+      &.opened {
+        background-color: #ffffff;
+        transform: rotate(130deg) translate(-1px, 0px);
+      }
     }
 
     &.right {
       transform: rotate(-45deg) translate(-1px, 0px);
+
+      &.opened {
+        background-color: #ffffff;
+        transform: rotate(-130deg) translate(1px, 0px);
+      }
     }
+  }
+}
+
+.circle.opened {
+  background-color: #aea1a1;
+}
+
+.price_text {
+  width: 168px;
+  height: 30px;
+  font-family: "Inter";
+  font-size: 10px;
+  color: #717171;
+  line-height: 10px;
+}
+
+.price_line {
+  width: 164px;
+  height: 1px;
+  background-color: #717171;
+  margin-bottom: 6px;
+}
+
+.price_basics_holder {
+  display: flex;
+  height: 17px;
+  margin-top: 6px;
+}
+
+.price_basics {
+  display: inline-block;
+  font-family: "Inter";
+  font-size: 16px;
+  color: #e06733;
+  line-height: 20px;
+}
+
+.price_basics::first-letter {
+  font-size: 12px;
+}
+
+.price_hour {
+  display: inline;
+  font-family: "Inter";
+  font-size: 12px;
+  color: black;
+  line-height: 20px;
+}
+
+.order_button {
+  font-family: "Inter";
+  font-size: 14px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 3px 20px;
+  border-color: #ffffff;
+  line-height: 20px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+  &:hover {
+    cursor: pointer;
+    color: $hover;
   }
 }
 
@@ -635,7 +758,7 @@ html {
   user-select: none;
 }
 
-.pic_city {
+.pick_city {
   display: flex;
   justify-content: space-between;
 }
@@ -645,6 +768,65 @@ html {
   height: 497px;
   background-image: url("../refs/1440/contact_woman\ 1.png");
   transform: translateY(-68px);
+}
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &.active {
+    background-color: #dce9d9;
+    height: 284px;
+    font-family: "Inter";
+    font-size: 16px;
+    line-height: 40px;
+    color: #499a18;
+    z-index: 100;
+  }
+}
+
+.city_canandaigua,
+.city_newyork,
+.city_yonkers,
+.city_sherrill {
+  padding-left: 41px;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    color: #717171;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      width: 380px;
+      height: 1px;
+      background-color: #717171;
+      display: block;
+      position: absolute;
+      transform: translate(0px, -5px);
+      animation-name: after_line_anim;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      animation-play-state: running;
+    }
+
+    @keyframes after_line_anim {
+      0% {
+        width: 0px;
+      }
+      100% {
+        width: 380px;
+      }
+    }
+  }
+
+  &.active {
+    visibility: visible;
+  }
 }
 
 .city_choice {
@@ -657,6 +839,11 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 0px 35px 0px 35px;
+
+  &.active {
+    background-color: #c1e698;
+    z-index: 200;
+  }
 }
 
 .city {
@@ -692,6 +879,10 @@ html {
     }
   }
 
+  &.active {
+    background-color: #8ba07e;
+  }
+
   .arrow_dropdown_city {
     width: 4px;
     height: 1px;
@@ -700,11 +891,128 @@ html {
 
     &.left {
       transform: rotate(45deg) translate(1px, 0px);
+
+      &.opened {
+        background-color: white;
+        transform: rotate(130deg) translate(-1px, 0px);
+      }
     }
 
     &.right {
       transform: rotate(-45deg) translate(-1px, 0px);
+
+      &.opened {
+        background-color: white;
+        transform: rotate(-130deg) translate(1px, 0px);
+      }
     }
+  }
+}
+
+.city_info {
+  width: 448px;
+  height: 214px;
+  background: #edf2ec;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  position: absolute;
+
+  &.active {
+    visibility: visible;
+  }
+}
+
+.city_block {
+  width: 382px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.city {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.city_name {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+}
+
+.phone_block {
+  width: 382px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.phone {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.phone_name {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+}
+
+.address_block {
+  width: 382px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.address {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.address_name {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #717171;
+}
+
+.call_button {
+  width: 122px;
+  height: 26px;
+  border: solid 1px #e06733;
+  border-radius: 5px;
+  font-family: "Inika";
+  font-size: 10px;
+  line-height: 26px;
+  text-align: center;
+  color: #717171;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  margin-top: 24px;
+
+  &:hover {
+    border: solid 1px $text_coloured_one;
+    color: $text_coloured_two;
+    cursor: pointer;
   }
 }
 
@@ -805,6 +1113,7 @@ html {
 
   &.instagram {
     background-image: url("../refs/icons/inst\ 1.svg");
+    transition: background-image 0.4s ease-in-out;
 
     &:hover {
       background-image: url("../refs/icons/inst_hover.svg");
@@ -813,6 +1122,7 @@ html {
 
   &.facebook {
     background-image: url("../refs/icons/fb\ 1.svg");
+    transition: background-image 0.4s ease-in-out;
 
     &:hover {
       background-image: url("../refs/icons/fb_hover.svg");
@@ -821,6 +1131,7 @@ html {
 
   &.twitter {
     background-image: url("../refs/icons/tw\ 1.svg");
+    transition: background-image 0.4s ease-in-out;
 
     &:hover {
       background-image: url("../refs/icons/tw_hover.svg");
@@ -829,6 +1140,7 @@ html {
 
   &.pinterest {
     background-image: url("../refs/icons/pinterest\ 1.svg");
+    transition: background-image 0.4s ease-in-out;
 
     &:hover {
       background-image: url("../refs/icons/pinterest_hover.svg");
@@ -1105,7 +1417,7 @@ html {
     padding-top: 40px;
   }
 
-  .pic_city {
+  .pick_city {
     width: 450px;
     height: 550px;
     display: flex;
@@ -1150,8 +1462,8 @@ html {
   .logo {
     &.active {
       color: $text_coloured_one;
+    }
   }
-}
 
   .header_wrapper {
     width: 330px;
@@ -1572,7 +1884,7 @@ html {
     line-height: 33px;
   }
 
-  .pic_city {
+  .pick_city {
     width: 330px;
     height: 302px;
     display: flex;
@@ -1724,11 +2036,11 @@ html {
     }
   }
 
-  .nav_item_burger_home {
+  .nav_item_burger {
     list-style: none;
   }
 
-  .nav_item_link_burger_home {
+  .nav_item_link_burger {
     font-family: "Inika";
     font-style: normal;
     font-weight: 400;
@@ -2029,7 +2341,7 @@ html {
     line-height: 33px;
   }
 
-  .pic_city {
+  .pick_city {
     width: 280px;
     height: 302px;
     display: flex;
