@@ -1,13 +1,17 @@
 export function serviceBlur() {
   const gardensButton = document.querySelector(".service_button.gardens");
-  const gardensCardOne = document.querySelector(".card.one");
-  const gardensCardFive = document.querySelector(".card.five");
+  const gardensCards = document.querySelectorAll(".card.gardens");
   const lawnButton = document.querySelector(".service_button.lawn");
-  const lawnCardThree = document.querySelector(".card.three");
+  const lawnCards = document.querySelectorAll(".card .lawn");
   const plantingButton = document.querySelector(".service_button.planting");
-  const plantingCardTwo = document.querySelector(".card.two");
-  const plantingCardFour = document.querySelector(".card.four");
-  const plantingCardSix = document.querySelector(".card.six");
+  const plantingCards = document.getElementsByClassName("card planting");
+  const serviceButtons = document.querySelectorAll('.service_button');
+
+  serviceButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.target.classList.toggle('active');
+    })
+  })
 
   // function toggleBlur() {
   //     this.classList.toggle('blur');
@@ -18,19 +22,31 @@ export function serviceBlur() {
   gardensButton.addEventListener("click", () => {
     //gardensCardOne.style.filter = 'blur(5px)';
     //gardensCardFive.style.filter = 'blur(5px)';
-    lawnCardThree.classList.toggle("blur");
-    plantingCardTwo.classList.toggle("blur");
-    plantingCardFour.classList.toggle("blur");
-    plantingCardSix.classList.toggle("blur");
-    gardensButton.classList.toggle('active');
+    for (const card of lawnCards) {
+        card.classList.toggle('blur');
+    }
+    for (const card of plantingCards) {
+        card.classList.toggle('blur');
+    }
   });
 
   lawnButton.addEventListener("click", () => {
-    lawnCardThree.classList.toggle("blur");
-    lawnButton.classList.toggle('active');
+    for (const card of gardensCards) {
+        card.classList.toggle('blur');
+    }
+    for (const card of plantingCards) {
+        card.classList.toggle('blur');
+    }
   });
 
-  //document.querySelector(".service_button.planting").disabled = true;
+  plantingButton.addEventListener("click", () => {
+    for (const card of gardensCards) {
+        card.classList.toggle('blur');
+    }
+    for (const card of lawnCards) {
+        card.classList.toggle('blur');
+    }
+  });
 
   if(gardensButton.classList.contains('active') === true && lawnButton.classList.contains('active') === true) {
     // plantingButton.setAttribute('disabled', '');
