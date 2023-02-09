@@ -1,6 +1,10 @@
 export function pricesAccordion() {
   const basicsOpenButton = document.querySelector(".circle.basics");
-  const basicsBlock = document.querySelector(".option");
+  const standardOpenButton = document.querySelector(".circle.standard");
+  const procareOpenButton = document.querySelector(".circle.procare");
+  const basicsBlock = document.querySelector(".option.one");
+  const standardBlock = document.querySelector(".option.two");
+  const procareBlock = document.querySelector(".option.three");
   const arrowDropDownLeft = document.querySelector(".arrow_dropdown.left");
   const arrowDropDownRight = document.querySelector(".arrow_dropdown.right");
 
@@ -24,22 +28,25 @@ export function pricesAccordion() {
   orderButton.classList.add("order_button");
   orderButton.textContent = "Order";
 
-  basicsBlock.appendChild(line);
-  basicsBlock.appendChild(text);
-  basicsBlock.appendChild(priceBasicsHolder);
-  basicsBlock.appendChild(orderButton);
-
   line.style.visibility = "hidden";
   text.style.visibility = "hidden";
   priceBasicsHolder.style.visibility = "hidden";
   orderButton.style.visibility = "hidden";
+
   basicsBlock.style.height = "50px";
+  standardBlock.style.height = "50px";
+  procareBlock.style.height = "50px";
 
   basicsOpenButton.addEventListener("click", () => {
     basicsBlock.classList.toggle("opened");
     basicsOpenButton.classList.toggle("opened");
     arrowDropDownLeft.classList.toggle("opened");
     arrowDropDownRight.classList.toggle("opened");
+
+    basicsBlock.appendChild(line);
+    basicsBlock.appendChild(text);
+    basicsBlock.appendChild(priceBasicsHolder);
+    basicsBlock.appendChild(orderButton);
 
     HTMLElement.prototype.empty = function () {
       while (this.firstChild) {
@@ -67,6 +74,60 @@ export function pricesAccordion() {
       priceBasicsHolder.style.visibility = "hidden";
       orderButton.style.visibility = "hidden";
       basicsBlock.style.height = "50px";
+    }
+  });
+
+  standardOpenButton.addEventListener("click", () => {
+    standardBlock.classList.toggle("opened");
+    standardOpenButton.classList.toggle("opened");
+    arrowDropDownLeft.classList.toggle("opened");
+    arrowDropDownRight.classList.toggle("opened");
+
+    standardBlock.appendChild(line);
+  standardBlock.appendChild(text);
+  standardBlock.appendChild(priceBasicsHolder);
+  standardBlock.appendChild(orderButton);
+
+    if (standardBlock.classList.contains("opened")) {
+      line.style.visibility = "visible";
+      text.style.visibility = "visible";
+      priceBasicsHolder.style.visibility = "visible";
+      orderButton.style.visibility = "visible";
+      standardBlock.style.height = "154px";
+      priceBasics.textContent = "$25";
+    } else {
+      line.style.visibility = "hidden";
+      text.style.visibility = "hidden";
+      priceBasicsHolder.style.visibility = "hidden";
+      orderButton.style.visibility = "hidden";
+      standardBlock.style.height = "50px";
+    }
+  });
+
+  procareOpenButton.addEventListener("click", (e) => {
+    procareBlock.classList.toggle("opened");
+    procareOpenButton.classList.toggle("opened");
+    arrowDropDownLeft.classList.toggle("opened");
+    arrowDropDownRight.classList.toggle("opened");
+
+    procareBlock.appendChild(line);
+  procareBlock.appendChild(text);
+  procareBlock.appendChild(priceBasicsHolder);
+  procareBlock.appendChild(orderButton);
+
+    if (procareBlock.classList.contains("opened")) {
+      line.style.visibility = "visible";
+      text.style.visibility = "visible";
+      priceBasicsHolder.style.visibility = "visible";
+      orderButton.style.visibility = "visible";
+      procareBlock.style.height = "154px";
+      priceBasics.textContent = "$35";
+    } else {
+      line.style.visibility = "hidden";
+      text.style.visibility = "hidden";
+      priceBasicsHolder.style.visibility = "hidden";
+      orderButton.style.visibility = "hidden";
+      procareBlock.style.height = "50px";
     }
   });
 }
