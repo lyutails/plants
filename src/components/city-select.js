@@ -28,7 +28,7 @@ export function citySelect() {
   cityBlock.classList.add('city_block');
   cityInfo.appendChild(cityBlock);
   const city = document.createElement('span');
-  city.classList.add('city');
+  city.classList.add('city_contacts');
   city.textContent = 'City:';
   cityBlock.appendChild(city);
   const cityName = document.createElement('span');
@@ -79,6 +79,7 @@ export function citySelect() {
     cityNewYork.classList.toggle('active');
     cityYonkers.classList.toggle('active');
     citySherrill.classList.toggle('active');
+    cityInfo.style.visibility = 'hidden';
   })
 
   const currentCity = document.querySelector('.city');
@@ -101,6 +102,8 @@ export function citySelect() {
         window.open('tel:+1	585	393 0001');
         //window.location = "tel:+1	585	393 0001"
     })
+
+    cityInfo.style.visibility = 'visible';
   })
 
   cityNewYork.addEventListener('click', () => {
@@ -122,6 +125,8 @@ export function citySelect() {
         window.open('tel:+1	212	456 0002');
         //window.location = "tel:+1	212	456 0002"
     })
+
+    cityInfo.style.visibility = 'visible';
   })
 
   cityYonkers.addEventListener('click', () => {
@@ -143,6 +148,8 @@ export function citySelect() {
         window.open('tel:+1	914	678 0003');
         //window.location = "tel:+1	914	678 0003"
     })
+
+    cityInfo.style.visibility = 'visible';
   })
 
   citySherrill.addEventListener('click', () => {
@@ -164,5 +171,7 @@ export function citySelect() {
         window.open('tel:+1	315	908 0004');
         //window.location = "tel:+1	315	908 0004"
     })
+
+    cityInfo.style.visibility = 'visible';
   })
 }

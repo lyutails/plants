@@ -770,6 +770,10 @@ html {
   transform: translateY(-68px);
 }
 
+.cities_info {
+  height: 400px;
+}
+
 .cities {
   display: flex;
   flex-direction: column;
@@ -784,6 +788,7 @@ html {
     line-height: 40px;
     color: #499a18;
     z-index: 100;
+    position: relative;
   }
 }
 
@@ -834,11 +839,12 @@ html {
   height: 50px;
   background-color: $info_blocks;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-  margin-top: 37px;
+  //margin-top: 37px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 35px 0px 35px;
+  transform: translate(0px, 2px);
 
   &.active {
     background-color: #c1e698;
@@ -934,6 +940,19 @@ html {
 }
 
 .city {
+  width: 204px;
+  height: 40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: $text_coloured_four;
+  user-select: none;
+}
+
+.city_contacts {
   font-family: "Inter";
   font-size: 16px;
   line-height: 40px;
@@ -1415,16 +1434,17 @@ html {
 
   .contacts_title {
     padding-top: 40px;
+    margin-bottom: 0px;
   }
 
   .pick_city {
     width: 450px;
-    height: 550px;
+    height: 585px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 61px;
   }
 
   .contacts_pic {
@@ -1891,20 +1911,77 @@ html {
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
-    margin-top: 84px;
+    margin-top: 42px;
+  }
+
+  .city_info {
+    width: 300px;
+    height: 212px;
+  }
+
+  .city_block,
+  .phone_block,
+  .address_block {
+    width: 260px;
   }
 
   .contacts_pic {
     width: 100px;
     height: 125px;
     background-image: url("../refs/380/contact_woman\ 1\ \(2\).png");
-    transform: translateY(0px);
+    transform: translateY(-10px);
   }
 
   .city_choice {
     width: 300px;
     height: 50px;
     margin-top: 0px;
+  }
+
+  .city_canandaigua,
+  .city_newyork,
+  .city_yonkers,
+  .city_sherrill {
+    padding-left: 41px;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      color: #717171;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        width: 220px;
+        height: 1px;
+        background-color: #717171;
+        display: block;
+        position: absolute;
+        transform: translate(0px, -5px);
+        animation-name: after_line_anim;
+        animation-duration: 0.4s;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        animation-play-state: running;
+      }
+
+      @keyframes after_line_anim {
+        0% {
+          width: 0px;
+        }
+        100% {
+          width: 220px;
+        }
+      }
+    }
+
+    &.active {
+      visibility: visible;
+    }
+  }
+
+  .contacts_pic {
+    display: none;
   }
 
   .footer_wrapper {
