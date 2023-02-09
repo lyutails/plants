@@ -8,6 +8,8 @@ export function pricesAccordion() {
   const arrowDropDownLeft = document.querySelector(".arrow_dropdown.left");
   const arrowDropDownRight = document.querySelector(".arrow_dropdown.right");
 
+  const allPricesOptions = document.querySelectorAll('.option');
+
   const line = document.createElement("div");
   line.classList.add("price_line");
   const text = document.createElement("p");
@@ -60,6 +62,11 @@ export function pricesAccordion() {
       priceBasicsHolder.style.visibility = "visible";
       orderButton.style.visibility = "visible";
       basicsBlock.style.height = "154px";
+
+      standardBlock.classList.remove('opened');
+      standardBlock.style.height = "50px";
+      procareBlock.classList.remove('opened');
+      procareBlock.style.height = "50px";
     } else {
       //basicsBlock.removeChild(basicsBlock.lastChild);
       //   priceBasics.replaceChildren();
@@ -84,9 +91,14 @@ export function pricesAccordion() {
     arrowDropDownRight.classList.toggle("opened");
 
     standardBlock.appendChild(line);
-  standardBlock.appendChild(text);
-  standardBlock.appendChild(priceBasicsHolder);
-  standardBlock.appendChild(orderButton);
+    standardBlock.appendChild(text);
+    standardBlock.appendChild(priceBasicsHolder);
+    standardBlock.appendChild(orderButton);
+
+    basicsBlock.classList.remove('opened');
+    basicsBlock.style.height = "50px";
+    procareBlock.classList.remove('opened');
+    procareBlock.style.height = "50px";
 
     if (standardBlock.classList.contains("opened")) {
       line.style.visibility = "visible";
@@ -111,9 +123,14 @@ export function pricesAccordion() {
     arrowDropDownRight.classList.toggle("opened");
 
     procareBlock.appendChild(line);
-  procareBlock.appendChild(text);
-  procareBlock.appendChild(priceBasicsHolder);
-  procareBlock.appendChild(orderButton);
+    procareBlock.appendChild(text);
+    procareBlock.appendChild(priceBasicsHolder);
+    procareBlock.appendChild(orderButton);
+
+    basicsBlock.classList.remove('opened');
+    basicsBlock.style.height = "50px";
+    standardBlock.classList.remove('opened');
+    standardBlock.style.height = "50px";
 
     if (procareBlock.classList.contains("opened")) {
       line.style.visibility = "visible";
@@ -130,4 +147,11 @@ export function pricesAccordion() {
       procareBlock.style.height = "50px";
     }
   });
+
+//   allPricesOptions.forEach((option) => {
+//     option.addEventListener('click', (e) => {
+//         e.target.classList.add('opened');
+//         !e.target.classList.remove('opened');
+//     })
+//   })
 }
