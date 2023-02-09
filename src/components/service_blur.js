@@ -55,7 +55,10 @@ export function serviceBlur() {
   });
 
   serviceButtons.forEach((button) => {
-    button.addEventListener("click", () => {button.disabled = true;
+    button.addEventListener("click", () => {
+      if (button.classList.contains("active").length === 2) {
+        (!button.classList.contains("active")).disabled = true;
+      }
     });
   });
 
